@@ -24,7 +24,6 @@ kaya <- function(pop, gdp, enInt, carbInt, output_type = "CO2") {
   checkmate::assert_numeric(carbInt, lower = 0, len = 1, any.missing = FALSE)
   checkmate::assert_character(output_type, any.missing = FALSE)
 
-  #stopifnot(output_type %in% c("CO2", "C"))
   if (!output_type %in% c("CO2", "C")) {
     stop("`output_type` must be 'CO2' or 'C'")
   }
