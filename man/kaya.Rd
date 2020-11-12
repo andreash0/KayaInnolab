@@ -4,7 +4,7 @@
 \alias{kaya}
 \title{Kaya Identity}
 \usage{
-kaya(pop, gdp, enInt, carbInt)
+kaya(pop, gdp, enInt, carbInt, output_type = "CO2")
 }
 \arguments{
 \item{pop}{Population size (in millions).}
@@ -14,9 +14,11 @@ kaya(pop, gdp, enInt, carbInt)
 \item{enInt}{Energy Intensity (in Gigajoule/$1000GDP).}
 
 \item{carbInt}{Carbon Intensity (in tonnes CO2/Gigajoule).}
+
+\item{output_type}{Output type can be either "CO2" or "C".}
 }
 \value{
-Total yearly CO2 emissions according to the kaya identity.
+Total yearly emissions according to the kaya identity in CO2 or C.
 }
 \description{
 This function calculates the total CO2 emissions from human sources according
@@ -27,4 +29,6 @@ See \url{https://en.wikipedia.org/wiki/Kaya_identity} for more details.
 \examples{
 # Kaya Identity for Germany
 kaya(82.4, 44, 5, 0.05)
+# Kaya Identity for Germany in C (Carbon)
+kaya(82.4, 44, 5, 0.05, output_type = "C")
 }
