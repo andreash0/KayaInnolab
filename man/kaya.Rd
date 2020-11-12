@@ -16,11 +16,12 @@ kaya(pop, gdp, enInt, carbInt)
 \item{carbInt}{Carbon Intensity (in tonnes CO2/Gigajoule).}
 }
 \value{
-Total CO2 emmissions from human sources according to the kaya identity.
+Total yearly CO2 emissions according to the kaya identity.
 }
 \description{
-This function calculates the total CO2 emmissions from human sources according
-to the kaya identity.
+This function calculates the total CO2 emissions from human sources according
+to the kaya identity. \cr
+The Kaya Identity can be computed as: co2 = pop * gdp * enInt * carbInt \cr
 See \url{https://en.wikipedia.org/wiki/Kaya_identity} for more details.
 }
 \examples{

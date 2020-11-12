@@ -1,17 +1,23 @@
 #' Kaya Identity
 #'
-#' This function calculates the total CO2 emmissions from human sources according
-#' to the kaya identity.
+#' This function calculates the total CO2 emissions from human sources according
+#' to the kaya identity. \cr
+#' The Kaya Identity can be computed as: co2 = pop * gdp * enInt * carbInt \cr
 #' See \url{https://en.wikipedia.org/wiki/Kaya_identity} for more details.
 #'
 #' @param pop Population size (in millions).
 #' @param gdp GDP per capita (in 1000$/person).
 #' @param enInt Energy Intensity (in Gigajoule/$1000GDP).
 #' @param carbInt Carbon Intensity (in tonnes CO2/Gigajoule).
-#' @return Total CO2 emmissions from human sources according to the kaya identity.
+#' @return Total yearly CO2 emissions according to the kaya identity.
 #' @examples
 #' # Kaya Identity for Germany
 #' kaya(82.4, 44, 5, 0.05)
+#' @export
 kaya <- function(pop, gdp, enInt, carbInt) {
+  checkmate::assert_numeric(pop, lower = 0, len = 1, any.missing = FALSE)
+  checkmate::assert_numeric(gdp, lower = 0, len = 1, any.missing = FALSE)
+  checkmate::assert_numeric(enInt, lower = 0, len = 1, any.missing = FALSE)
+  checkmate::assert_numeric(carbInt, lower = 0, len = 1, any.missing = FALSE)
   pop * gdp * enInt * carbInt
 }
